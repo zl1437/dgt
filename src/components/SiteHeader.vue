@@ -1,10 +1,11 @@
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
-import { RouterLink, useRoute } from 'vue-router'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
 import {
-  SITE,
+  REMOTE_SITE,
   img,
   productCategories,
+  productCategoryPath,
   socialIcons,
   MAILTO,
   CONTACT_EMAIL,
@@ -17,9 +18,11 @@ import {
   ROUTE_CN_CASE,
   ROUTE_CN_NEWS,
   ROUTE_CN_CONTACT,
+  ROUTE_PRODUCTS,
 } from '../site.js'
 
 const route = useRoute()
+const router = useRouter()
 
 const mobileOpen = ref(false)
 const searchOpen = ref(false)
@@ -49,6 +52,14 @@ function toggleProductSub(e) {
   productSubOpen.value = !productSubOpen.value
 }
 
+/** 移动端：展开子菜单；桌面端：正常进入产品中心 */
+function onProductNavClick(e) {
+  if (!isDesktop.value) {
+    e.preventDefault()
+    productSubOpen.value = !productSubOpen.value
+  }
+}
+
 onMounted(() => {
   checkMq()
   window.addEventListener('resize', checkMq)
@@ -64,6 +75,13 @@ function toggleMenu() {
 
 function closeMenu() {
   mobileOpen.value = false
+}
+
+function onSearchSubmit() {
+  const el = document.querySelector('.search-form input[name="s"]')
+  const q = el?.value?.trim() || ''
+  router.push({ path: ROUTE_PRODUCTS, query: q ? { q } : {} })
+  searchOpen.value = false
 }
 </script>
 
@@ -111,29 +129,29 @@ function closeMenu() {
               <div class="header-top-right-icon-area">
                 <ul>
                   <li v-for="s in socialIcons" :key="s.alt">
-                    <a :href="s.href" target="_blank" rel="noopener noreferrer">
-                      <img :src="s.src" :alt="s.alt" style="border-radius: 50%" />
+                    <a class="header-social-link" :href="s.href" target="_blank" rel="noopener noreferrer">
+                      <img :src="s.src" :alt="s.alt" />
                     </a>
                   </li>
-                  <li>
-                    <div>
-                      <a :href="`${SITE}/index.html`">
+                  <li class="header-lang-item">
+                    <div class="header-lang-switch">
+                      <a class="header-lang-btn" :href="`${REMOTE_SITE}/index.html`">
                         <img
+                          class="header-lang-flag"
                           src="/resource/n07/function/images/en.jpg"
                           title="ENGLISH"
-                          width="70"
-                          border="0"
                           alt="English"
                         />
+                        <span class="header-lang-label">English</span>
                       </a>
-                      <RouterLink :to="ROUTE_HOME">
+                      <RouterLink class="header-lang-btn" :to="ROUTE_HOME">
                         <img
+                          class="header-lang-flag"
                           src="/resource/n07/function/images/cn.jpg"
                           title="中文版"
-                          width="70"
-                          border="0"
                           alt="中文"
                         />
+                        <span class="header-lang-label">中文</span>
                       </RouterLink>
                     </div>
                   </li>
@@ -163,12 +181,12 @@ function closeMenu() {
                 <RouterLink :to="ROUTE_CN_ABOUT" @click="closeMenu">关于我们</RouterLink>
               </li>
               <li class="has-sub">
-                <a href="#" @click="toggleProductSub">
+                <RouterLink :to="ROUTE_PRODUCTS" @click="onProductNavClick">
                   产品中心<i class="fas fa-angle-down"></i><span><i class="fas fa-angle-right"></i></span>
-                </a>
+                </RouterLink>
                 <ul v-show="isDesktop || productSubOpen" class="sub-menu">
-                  <li v-for="c in productCategories" :key="c.href">
-                    <a :href="c.href" :title="c.title" @click="closeMenu">{{ c.title }}</a>
+                  <li v-for="c in productCategories" :key="c.slug">
+                    <RouterLink :to="productCategoryPath(c.slug)" :title="c.title" @click="closeMenu">{{ c.title }}</RouterLink>
                   </li>
                 </ul>
               </li>
@@ -190,13 +208,15 @@ function closeMenu() {
               </div>
             </div>
 
-            <div class="d-lg-none" style="background: #f8f8f8; padding-top: 15px; text-align: center; padding-bottom: 10px">
-              <div>
-                <a :href="`${SITE}/index.html`">
-                  <img src="/resource/n07/function/images/en.jpg" title="ENGLISH" width="70" border="0" alt="" />
+            <div class="d-lg-none mobile-lang-bar">
+              <div class="header-lang-switch header-lang-switch--mobile">
+                <a class="header-lang-btn" :href="`${REMOTE_SITE}/index.html`">
+                  <img class="header-lang-flag" src="/resource/n07/function/images/en.jpg" title="ENGLISH" alt="English" />
+                  <span class="header-lang-label">English</span>
                 </a>
-                <RouterLink :to="ROUTE_HOME">
-                  <img src="/resource/n07/function/images/cn.jpg" title="中文版" width="70" border="0" alt="" />
+                <RouterLink class="header-lang-btn" :to="ROUTE_HOME">
+                  <img class="header-lang-flag" src="/resource/n07/function/images/cn.jpg" title="中文版" alt="中文" />
+                  <span class="header-lang-label">中文</span>
                 </RouterLink>
               </div>
             </div>
@@ -214,7 +234,7 @@ function closeMenu() {
         <button type="button" class="close-search style-two" @click="searchOpen = false">
           <i class="fas fa-times"></i>
         </button>
-        <form class="search-form" method="post" :action="`${SITE}/c_products/`" @submit.prevent="searchOpen = false">
+        <form class="search-form" @submit.prevent="onSearchSubmit">
           <input type="search" name="s" placeholder="输入关键字搜索" />
         </form>
       </div>
@@ -223,6 +243,67 @@ function closeMenu() {
 </template>
 
 <style scoped>
+/* 与 nuoerbearing 原站一致：外链 + 圆形图标图（无额外色底），图标为 80×80 缩放到顶栏高度 */
+.header-social-link {
+  display: inline-block;
+  line-height: 0;
+  vertical-align: middle;
+}
+.header-social-link img {
+  height: 35px;
+  width: auto;
+  max-width: none;
+  border-radius: 50%;
+  vertical-align: middle;
+  object-fit: cover;
+}
+.header-lang-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header-lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+}
+.header-lang-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.22);
+}
+.header-lang-flag {
+  width: 28px;
+  height: auto;
+  display: block;
+}
+.header-lang-label {
+  font-size: 13px;
+  white-space: nowrap;
+}
+.mobile-lang-bar {
+  background: #f8f8f8;
+  padding: 15px 10px 12px;
+  text-align: center;
+}
+.header-lang-switch--mobile .header-lang-btn {
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+}
+.header-lang-switch--mobile .header-lang-btn:hover {
+  color: #0076a4;
+  background: #f9f9f9;
+}
+
 .menu-wrapper nav ul li :deep(a.router-link-active) {
   color: #0076a4 !important;
 }

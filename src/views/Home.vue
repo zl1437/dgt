@@ -1,42 +1,15 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import HeroSwiper from '../components/HeroSwiper.vue'
 import ProductPortfolio from '../components/ProductPortfolio.vue'
 import {
-  SITE,
   img,
   products,
-  socialIcons,
-  MAILTO,
-  CONTACT_EMAIL,
-  TEL_MOBILE_DISPLAY,
-  TEL_LANDLINE_DISPLAY,
-  TEL_MOBILE_HREF,
-  TEL_LANDLINE_HREF,
-  footerLegalLinks,
-  NEWS_COVER_7TH,
+  showcaseCases,
+  newsItems,
   ROUTE_CN_ABOUT,
   ROUTE_CN_CASE,
 } from '../site.js'
-
-const showToTop = ref(false)
-
-function onScroll() {
-  showToTop.value = window.scrollY > 400
-}
-
-function scrollTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', onScroll, { passive: true })
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', onScroll)
-})
 
 const services = [
   {
@@ -59,13 +32,6 @@ const services = [
     title: '团队：团队保障',
     html: '<p>强大的生产团队、研发团队、营销团队，实力保证。</p>',
   },
-]
-
-const cases = [
-  { img: '/pic/small2/5_0.jpg', caption: '产品效果图1' },
-  { img: '/pic/small2/2020-11-19-20-21-35.jpg', caption: '产品效果图2' },
-  { img: '/pic/small2/2020-11-19-20-20-9.jpg', caption: '产品效果图3' },
-  { img: '/pic/small2/2020-11-19-20-19-55.jpg', caption: '产品效果图4' },
 ]
 
 </script>
@@ -174,7 +140,7 @@ const cases = [
     <div class="team-section pb-50" style="background: #fff">
       <div class="container">
         <div class="row">
-          <div v-for="(c, i) in cases" :key="i" class="col-sm-12 col-md-6 col-lg-3">
+          <div v-for="(c, i) in showcaseCases" :key="i" class="col-sm-12 col-md-6 col-lg-3">
             <div class="single-team-member">
               <div class="team-member-thumb">
                 <img :src="img(c.img)" alt="案例展示" loading="lazy" />
@@ -245,46 +211,22 @@ const cases = [
           <span class="section-head-bar-2"></span>
         </div>
         <div class="row">
-          <div class="col-md-6 mb-4">
+          <div v-for="item in newsItems" :key="item.id" class="col-md-6 mb-4">
             <div class="blog-single-carousel">
               <div class="blog-thumb">
-                <a :href="`${SITE}/cnnews/3.html`" target="_blank" rel="noopener">
-                  <img
-                    :src="img(NEWS_COVER_7TH)"
-                    alt="以匠心铸品质，以创新启未来——致诺尔轴承成立七周年"
-                    loading="lazy"
-                  />
-                </a>
+                <RouterLink :to="`/c_news/${item.id}`">
+                  <img :src="img(item.cover)" :alt="item.title" loading="lazy" />
+                </RouterLink>
               </div>
               <div class="blog-content">
                 <h5>
-                  <a :href="`${SITE}/cnnews/3.html`" target="_blank" rel="noopener">以匠心铸品质，以创新启未来——致诺尔轴承成立七周年</a>
+                  <RouterLink :to="`/c_news/${item.id}`">{{ item.title }}</RouterLink>
                 </h5>
                 <div class="blog-learn-more">
-                  <a :href="`${SITE}/cnnews/3.html`" target="_blank" rel="noopener">
+                  <RouterLink :to="`/c_news/${item.id}`">
                     &nbsp;更多&nbsp;
                     <i class="fas fa-angle-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 mb-4">
-            <div class="blog-single-carousel">
-              <div class="blog-thumb">
-                <a :href="`${SITE}/cnnews/2.html`" target="_blank" rel="noopener">
-                  <img :src="img('/pic/other/2025-6-16-18-28-34.png')" alt="诺尔轴承有限公司成立公告" loading="lazy" />
-                </a>
-              </div>
-              <div class="blog-content">
-                <h5>
-                  <a :href="`${SITE}/cnnews/2.html`" target="_blank" rel="noopener">诺尔轴承有限公司成立公告</a>
-                </h5>
-                <div class="blog-learn-more">
-                  <a :href="`${SITE}/cnnews/2.html`" target="_blank" rel="noopener">
-                    &nbsp;更多&nbsp;
-                    <i class="fas fa-angle-right"></i>
-                  </a>
+                  </RouterLink>
                 </div>
               </div>
             </div>
@@ -292,116 +234,5 @@ const cases = [
         </div>
       </div>
     </div>
-
-    <div class="footer">
-      <div class="container">
-        <div class="row footer-hr">
-          <div class="col-md-6 col-lg-4">
-            <div class="widget">
-              <div class="footer-contact">
-                <div class="footer-widget-title">
-                  <h5>关于我们</h5>
-                </div>
-                <p>
-                  我们始终以“技术为本、品质为根”为核心理念：团队汇聚10余年行业经验的研发与生产专家，深耕材料科学、精密加工与仿真测试技术，确保每一款产品兼具性能与耐用性；生产基地引进国际先进的智能化生产线，从原材料筛选到成品检测，全流程严格遵循ISO国际质量标准，以“零缺陷”出厂为目标，为客户创造可信赖的价值。
-                </p>
-                <div class="footer-about-social-icon">
-                  <ul>
-                    <li v-for="s in socialIcons" :key="s.alt + '-f'">
-                      <a :href="s.href" target="_blank" rel="noopener noreferrer">
-                        <img :src="s.src" :alt="s.alt" style="border-radius: 50%" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="widget">
-              <div class="footer-contact">
-                <div class="footer-widget-title">
-                  <h5>联系我们</h5>
-                </div>
-                <p><b>地址 : </b>上海市嘉定工业区叶城路925号B区4幢J</p>
-                <p>
-                  <b>电话: </b>
-                  <a :href="TEL_MOBILE_HREF">{{ TEL_MOBILE_DISPLAY }}</a>
-                  &nbsp;&nbsp;
-                  <a :href="TEL_LANDLINE_HREF">{{ TEL_LANDLINE_DISPLAY }}</a>
-                </p>
-                <p>
-                  <b>邮箱: </b>
-                  <a :href="MAILTO">{{ CONTACT_EMAIL }}</a>
-                </p>
-                <p>
-                  <b>网址:</b>
-                  <a :href="SITE" target="_blank" rel="noopener noreferrer">{{ SITE }}</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="widget">
-              <div class="footer-popular-post">
-                <div class="footer-widget-title">
-                  <h5>留言内容</h5>
-                </div>
-                <form class="rd-mailform_style-1" @submit.prevent>
-                  <div class="row">
-                    <div class="form-wrap col-md-6">
-                      <input type="text" placeholder="您的称呼" required />
-                    </div>
-                    <div class="form-wrap col-md-6" style="margin-top: 0">
-                      <input type="email" placeholder="您的邮箱" required />
-                    </div>
-                  </div>
-                  <div class="form-wrap">
-                    <textarea placeholder="留言内容" required></textarea>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <input class="subscribe-submit-btn" type="submit" value=" 提交留言 " style="position: relative; margin-bottom: 30px; top: 0; right: 0; font-size: 14px" />
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-copyright-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <div class="footer-copyright-text">
-              <p>&copy; 2026 - 上海赛铌斯实业有限公司 &nbsp; 版权所有.</p>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6">
-            <div class="footer-copyright-link text-md-right">
-              <ul>
-                <li v-for="item in footerLegalLinks" :key="item.label">
-                  <RouterLink v-if="item.to" :to="item.to">{{ item.label }}</RouterLink>
-                  <a v-else :href="item.href" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <button id="to-top" type="button" :style="{ visibility: showToTop ? 'visible' : 'hidden', opacity: showToTop ? 1 : 0 }" @click="scrollTop">
-      <i class="fa fa-angle-up"></i>
-    </button>
   </div>
 </template>
-
-<style scoped>
-#to-top {
-  transition: opacity 0.2s ease;
-}
-</style>

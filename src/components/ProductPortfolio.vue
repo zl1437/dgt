@@ -1,18 +1,21 @@
 <script setup>
-import { img } from '../site.js'
+import { RouterLink } from 'vue-router'
+import { img, productDetailPath } from '../site.js'
 
 defineProps({
   title: { type: String, required: true },
   items: { type: Array, required: true },
   /** 与主题一致的外层修饰，如 bg-2 */
   sectionClass: { type: String, default: '' },
+  /** 为 false 时不渲染顶部 section-head（产品总览页与横幅标题重复时使用） */
+  showSectionHead: { type: Boolean, default: true },
 })
 </script>
 
 <template>
   <div :class="['portfolio-section', 'style-2', 'pt-75', sectionClass].filter(Boolean)">
     <div class="container">
-      <div class="section-head text-center pb-60">
+      <div v-if="showSectionHead" class="section-head text-center pb-60">
         <h5>// {{ title }}</h5>
         <h2>{{ title }}</h2>
         <span class="section-head-bar-2"></span>
@@ -21,7 +24,7 @@ defineProps({
       <div class="row image_load">
         <div
           v-for="(p, idx) in items"
-          :key="idx"
+          :key="p.slug || idx"
           class="col-lg-3 col-md-6 col-sm-6 col-6 p-0 grid-item design cemes"
         >
           <div class="single_portfolio">
@@ -38,14 +41,14 @@ defineProps({
                   <a class="port-icon" :href="img(p.big)" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-image"></i>
                   </a>
-                  <a :title="p.title" :href="p.href" target="_blank" rel="noopener noreferrer">
+                  <RouterLink class="port-icon" :to="productDetailPath(p.slug)" :title="p.title">
                     <i class="fas fa-link"></i>
-                  </a>
+                  </RouterLink>
                 </div>
               </div>
               <div class="portfolio-content">
                 <h5>
-                  <a :title="p.title" :href="p.href" target="_blank" rel="noopener noreferrer">{{ p.title }}</a>
+                  <RouterLink :title="p.title" :to="productDetailPath(p.slug)">{{ p.title }}</RouterLink>
                 </h5>
                 <h5 v-if="p.category" class="portfolio-content-category">{{ p.category }}</h5>
               </div>
