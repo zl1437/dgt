@@ -49,7 +49,7 @@ const router = createRouter({
   },
 })
 
-const DEFAULT_TITLE = '临清市诺尔轴承有限公司'
+const DEFAULT_TITLE = '上海赛铌斯实业有限公司'
 
 router.afterEach((to) => {
   if (to.name === 'home') {

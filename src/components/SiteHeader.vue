@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { RouterLink } from 'vue-router'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { RouterLink, useRoute } from 'vue-router'
 import {
   SITE,
   img,
@@ -19,10 +19,21 @@ import {
   ROUTE_CN_CONTACT,
 } from '../site.js'
 
+const route = useRoute()
+
 const mobileOpen = ref(false)
 const searchOpen = ref(false)
 const isDesktop = ref(true)
 const productSubOpen = ref(false)
+
+watch(
+  () => route.fullPath,
+  () => {
+    mobileOpen.value = false
+    searchOpen.value = false
+    productSubOpen.value = false
+  },
+)
 
 function checkMq() {
   isDesktop.value = window.matchMedia('(min-width: 992px)').matches
@@ -83,7 +94,7 @@ function closeMenu() {
                   </div>
                 </a>
               </div>
-              <div class="header-top-left-single-item">
+              <!-- <div class="header-top-left-single-item">
                 <a :href="TEL_LANDLINE_HREF">
                   <div class="header-top-left-icon">
                     <span>
@@ -92,7 +103,7 @@ function closeMenu() {
                     </span>
                   </div>
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="col-md-4">
@@ -108,7 +119,7 @@ function closeMenu() {
                     <div>
                       <a :href="`${SITE}/index.html`">
                         <img
-                          src="https://cdn.sohokey.com/n07/function/images/en.jpg"
+                          src="/resource/n07/function/images/en.jpg"
                           title="ENGLISH"
                           width="70"
                           border="0"
@@ -117,7 +128,7 @@ function closeMenu() {
                       </a>
                       <RouterLink :to="ROUTE_HOME">
                         <img
-                          src="https://cdn.sohokey.com/n07/function/images/cn.jpg"
+                          src="/resource/n07/function/images/cn.jpg"
                           title="中文版"
                           width="70"
                           border="0"
@@ -139,7 +150,7 @@ function closeMenu() {
         <div class="menu-wrapper" :class="{ 'menu-open': mobileOpen }">
           <div class="m-logo">
             <RouterLink :to="ROUTE_HOME">
-              <img :src="img('/images/logo.png')" alt="临清市诺尔轴承有限公司" title="临清市诺尔轴承有限公司" />
+              <img :src="img('/images/logo.png')" width="360" alt="上海赛铌斯实业有限公司" title="上海赛铌斯实业有限公司" />
             </RouterLink>
           </div>
 
@@ -182,10 +193,10 @@ function closeMenu() {
             <div class="d-lg-none" style="background: #f8f8f8; padding-top: 15px; text-align: center; padding-bottom: 10px">
               <div>
                 <a :href="`${SITE}/index.html`">
-                  <img src="https://cdn.sohokey.com/n07/function/images/en.jpg" title="ENGLISH" width="70" border="0" alt="" />
+                  <img src="/resource/n07/function/images/en.jpg" title="ENGLISH" width="70" border="0" alt="" />
                 </a>
                 <RouterLink :to="ROUTE_HOME">
-                  <img src="https://cdn.sohokey.com/n07/function/images/cn.jpg" title="中文版" width="70" border="0" alt="" />
+                  <img src="/resource/n07/function/images/cn.jpg" title="中文版" width="70" border="0" alt="" />
                 </RouterLink>
               </div>
             </div>
@@ -212,6 +223,10 @@ function closeMenu() {
 </template>
 
 <style scoped>
+.menu-wrapper nav ul li :deep(a.router-link-active) {
+  color: #0076a4 !important;
+}
+
 @media (max-width: 991px) {
   .menu-wrapper:not(.menu-open) nav > ul {
     display: none !important;

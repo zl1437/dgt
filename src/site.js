@@ -1,5 +1,5 @@
 /** 目标站资源根路径（图片沿用线上地址） */
-export const SITE = 'https://www.nuoerbearing.com'
+export const SITE = ''
 
 /** 本项目 Vue Router 路径（与目标站中文栏目对应） */
 export const ROUTE_HOME = '/'
@@ -8,14 +8,14 @@ export const ROUTE_CN_CASE = '/cncase'
 export const ROUTE_CN_NEWS = '/c_news'
 export const ROUTE_CN_CONTACT = '/cncontact'
 
-export const CONTACT_EMAIL = 'info@nuoerbearing.com'
+export const CONTACT_EMAIL = 'easondu@synergybearings.com | vicky@synergybearings.com'
 export const MAILTO = `mailto:${CONTACT_EMAIL}`
-export const TEL_MOBILE_DISPLAY = '+86-18663016162'
-export const TEL_LANDLINE_DISPLAY = '+86-635-2557388'
+export const TEL_MOBILE_DISPLAY = '+8618839713991 | +8617821086766'
+export const TEL_LANDLINE_DISPLAY = '+8618839713991 | +8617821086766'
 /** E.164，用于 tel: */
-export const TEL_MOBILE_HREF = 'tel:+8618663016162'
-export const TEL_LANDLINE_HREF = 'tel:+865352557388'
-export const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=8618663016162'
+export const TEL_MOBILE_HREF = '+8618839713991 | +8617821086766'
+export const TEL_LANDLINE_HREF = '+8618839713991 | +8617821086766'
+export const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=8618839713991'
 
 export const PAGE_CN_ABOUT = `${SITE}/cnabout.html`
 /** 嵌入 iframe 用的目标站完整 URL */
@@ -42,7 +42,7 @@ export const img = (path) => {
 
 export const heroSlides = [
   {
-    bg: 'https://cdn.sohokey.com/n07/assets/images/hero/hero-s2.jpg',
+    bg: '/resource/n07/assets/images/hero/hero-s2.jpg',
     h4: '我们是轴承工贸一体服务商',
     h1: '专注轴承外贸行业建设15年',
     p: '我们客户遍布全球各个大洲，其中亚洲占比40%，欧洲占比25%，南美洲占比20%，非洲占比6%，北美占比9%。',
@@ -53,7 +53,7 @@ export const heroSlides = [
     btnHref: ROUTE_CN_ABOUT,
   },
   {
-    bg: 'https://cdn.sohokey.com/n07/assets/images/hero/hero-s3.jpg',
+    bg: '/resource/n07/assets/images/hero/hero-s3.jpg',
     h4: '我是横幅标题，标题可有可无',
     h1: '我是大字体显示位置',
     p: '这里是详细的介绍，写什么都可以，显示在这里的位置，这里也可根据背景图片设置文字颜色',
@@ -63,7 +63,7 @@ export const heroSlides = [
     showBtn: false,
   },
   {
-    bg: 'https://cdn.sohokey.com/n07/assets/images/hero/hero-s4.jpg',
+    bg: '/resource/n07/assets/images/hero/hero-s4.jpg',
     h4: 'change word color',
     h1: 'I am the Title I am a free bird',
     p: 'introduce me It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. fact that a reader will',

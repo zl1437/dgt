@@ -93,7 +93,7 @@ const cases = [
             <div class="about-content-container">
               <div class="section-head-container">
                 <div class="section-head">
-                  <h5>// 临清市诺尔轴承有限公司</h5>
+                  <h5>// 上海赛铌斯实业有限公司</h5>
                   <p>LQB® and NUOER® brand have a good reputation in the national and abroad market.</p>
                   <p>
                     LINQING CITY NUOER BEARING CO., LTD. is a professional bearing manufacturer which has more than 20 years experience in bearings production, bearings research and bearing quality control system. NUOER BEARING produces and sells 10 million sets of bearings each year, widely used in automobiles, railways, ships, industrial machinery, agricultural machinery, engineering machinery, mineral machinery and other fields. Can undertake a variety of bearing OEM and non-standard bearings customized.
@@ -113,7 +113,7 @@ const cases = [
           </div>
           <div class="col-sm-12 col-md-6">
             <div class="section-thumb">
-              <img :src="img('/pic/other/2024-6-20-17-1-57.jpg')" alt="临清市诺尔轴承有限公司" loading="lazy" />
+              <img :src="img('/pic/other/2024-6-20-17-1-57.jpg')" alt="上海赛铌斯实业有限公司" loading="lazy" />
             </div>
           </div>
         </div>
@@ -323,7 +323,7 @@ const cases = [
                 <div class="footer-widget-title">
                   <h5>联系我们</h5>
                 </div>
-                <p><b>地址 : </b>中国山东省聊城市临清市大辛庄办事处大辛庄村东</p>
+                <p><b>地址 : </b>上海市嘉定工业区叶城路925号B区4幢J</p>
                 <p>
                   <b>电话: </b>
                   <a :href="TEL_MOBILE_HREF">{{ TEL_MOBILE_DISPLAY }}</a>
@@ -377,7 +377,7 @@ const cases = [
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <div class="footer-copyright-text">
-              <p>&copy; 2026 - 临清市诺尔轴承有限公司 &nbsp; 版权所有.</p>
+              <p>&copy; 2026 - 上海赛铌斯实业有限公司 &nbsp; 版权所有.</p>
             </div>
           </div>
           <div class="col-sm-12 col-md-6">
