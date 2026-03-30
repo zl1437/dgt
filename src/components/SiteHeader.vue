@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 import {
   REMOTE_SITE,
@@ -28,6 +28,12 @@ const mobileOpen = ref(false)
 const searchOpen = ref(false)
 const isDesktop = ref(true)
 const productSubOpen = ref(false)
+
+/** 与静态站一致：凡 /products 及其子路径下「产品中心」导航均高亮 */
+const isProductsActive = computed(() => {
+  const p = route.path
+  return p === ROUTE_PRODUCTS || p.startsWith(`${ROUTE_PRODUCTS}/`)
+})
 
 watch(
   () => route.fullPath,
@@ -181,7 +187,11 @@ function onSearchSubmit() {
                 <RouterLink :to="ROUTE_CN_ABOUT" @click="closeMenu">关于我们</RouterLink>
               </li>
               <li class="has-sub">
-                <RouterLink :to="ROUTE_PRODUCTS" @click="onProductNavClick">
+                <RouterLink
+                  :to="ROUTE_PRODUCTS"
+                  :class="{ 'router-link-active': isProductsActive }"
+                  @click="onProductNavClick"
+                >
                   产品中心<i class="fas fa-angle-down"></i><span><i class="fas fa-angle-right"></i></span>
                 </RouterLink>
                 <ul v-show="isDesktop || productSubOpen" class="sub-menu">

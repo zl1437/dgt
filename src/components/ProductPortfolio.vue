@@ -9,12 +9,16 @@ defineProps({
   sectionClass: { type: String, default: '' },
   /** 为 false 时不渲染顶部 section-head（产品总览页与横幅标题重复时使用） */
   showSectionHead: { type: Boolean, default: true },
+  /** 两栏布局左侧嵌入时：不占满屏宽、与侧栏对齐 */
+  embedded: { type: Boolean, default: false },
 })
 </script>
 
 <template>
-  <div :class="['portfolio-section', 'style-2', 'pt-75', sectionClass].filter(Boolean)">
-    <div class="container">
+  <div
+    :class="['portfolio-section', 'style-2', embedded ? 'pt-0' : 'pt-75', sectionClass].filter(Boolean)"
+  >
+    <div :class="embedded ? 'container-fluid px-0' : 'container'">
       <div v-if="showSectionHead" class="section-head text-center pb-60">
         <h5>// {{ title }}</h5>
         <h2>{{ title }}</h2>

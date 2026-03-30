@@ -115,7 +115,18 @@ export const heroSlides = [
 export const productCategories = [
   { title: '深沟球轴承', slug: 'deep-groove' },
   { title: '圆锥滚子轴承', slug: 'taper-roller' },
-  { title: '外球面轴承', slug: 'pillow-block' },
+  {
+    title: '外球面轴承',
+    slug: 'pillow-block',
+    children: [
+      { title: 'UCP 系列' },
+      { title: 'UCF 系列' },
+      { title: 'UCFL 系列' },
+      { title: 'UCT 系列' },
+      { title: 'UCFB 系列' },
+      { title: 'UCFA 系列' },
+    ],
+  },
   { title: '调心球轴承', slug: 'self-aligning-ball' },
   { title: '调心滚子轴承', slug: 'spherical-roller' },
   { title: '推力球轴承', slug: 'thrust-ball' },
