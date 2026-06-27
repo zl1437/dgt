@@ -1,12 +1,23 @@
 <script setup>
+import { computed } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import { heroSlides } from '../site.js'
+import { getHeroSlides } from '../site.js'
+import { useLocale } from '../composables/useLocale'
 
 function isExternalHref(href) {
   return typeof href === 'string' && (href.startsWith('http://') || href.startsWith('https://'))
+}
+
+const { t, lang, isEn } = useLocale()
+const slides = computed(() => getHeroSlides(lang.value))
+
+function withLangIfNeeded(href) {
+  if (!href || isExternalHref(href)) return href
+  if (!isEn.value) return href
+  return href.includes('?') ? `${href}&lang=en` : `${href}?lang=en`
 }
 </script>
 
@@ -21,7 +32,7 @@ function isExternalHref(href) {
           class="swiper-container-one hero-swiper"
         >
           <SwiperSlide
-            v-for="(slide, i) in heroSlides"
+            v-for="(slide, i) in slides"
             :key="i"
             class="slide-1"
             :style="{ background: `url(${slide.bg}) no-repeat center/cover` }"
@@ -33,11 +44,11 @@ function isExternalHref(href) {
                 <p v-if="slide.p" :style="{ color: slide.pc }">{{ slide.p }}</p>
                 <div v-if="slide.showBtn" class="btn-common btn-hero">
                   <a
-                    :href="slide.btnHref"
+                    :href="withLangIfNeeded(slide.btnHref)"
                     :target="isExternalHref(slide.btnHref) ? '_blank' : undefined"
                     :rel="isExternalHref(slide.btnHref) ? 'noopener noreferrer' : undefined"
                   >
-                    &nbsp;更多&nbsp; <i class="fas fa-angle-right"></i>
+                    &nbsp;{{ t('common.learnMore') }}&nbsp; <i class="fas fa-angle-right"></i>
                   </a>
                 </div>
               </div>

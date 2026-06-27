@@ -7,7 +7,6 @@ export const REMOTE_SITE = 'https://synergybearings.com'
 export const ROUTE_HOME = '/'
 export const ROUTE_CN_ABOUT = '/cnabout'
 export const ROUTE_CN_CASE = '/cncase'
-export const ROUTE_CN_NEWS = '/c_news'
 export const ROUTE_CN_CONTACT = '/cncontact'
 export const ROUTE_PRODUCTS = '/products'
 
@@ -32,9 +31,6 @@ export const PAGE_PRIVACY = `${REMOTE_SITE}/privacy.html`
 /** 内页横幅默认背景 */
 export const DEFAULT_INNER_BANNER_BG = '/resource/n07/assets/images/hero/hero-s2.jpg'
 
-/** 与 cnnews/3.html 面包图同图（pic/flash/...） */
-export const NEWS_COVER_7TH = '/pic/flash/2024-6-25-15-20-37.jpg'
-
 export const footerLegalLinks = [
   { label: 'About Us', to: ROUTE_CN_ABOUT },
   { label: 'Privacy Policy', href: PAGE_PRIVACY },
@@ -54,28 +50,6 @@ export const showcaseCases = [
   { img: '/pic/small2/2020-11-19-20-20-9.jpg', caption: '产品效果图3' },
   { img: '/pic/small2/2020-11-19-20-19-55.jpg', caption: '产品效果图4' },
 ]
-
-/** 新闻列表（本地详情路由 /c_news/:id） */
-export const newsItems = [
-  {
-    id: '7th-anniversary',
-    title: '以匠心铸品质，以创新启未来——致诺尔轴承成立七周年',
-    cover: NEWS_COVER_7TH,
-    summary: '公司成立七周年之际，回顾发展历程，展望未来创新与品质之路。',
-    body: `<p>我们以匠心铸品质，以创新启未来。多年来，团队深耕轴承领域，持续为客户创造价值。</p><p>感谢各界伙伴的信任与支持，我们将继续提升产品与服务水平。</p>`,
-  },
-  {
-    id: 'establishment-notice',
-    title: '诺尔轴承有限公司成立公告',
-    cover: '/pic/other/2025-6-16-18-28-34.png',
-    summary: '公司正式成立，将致力于轴承产品的研发、生产与销售。',
-    body: `<p>诺尔轴承有限公司正式成立。我们将秉承专业精神，为客户提供优质轴承产品与解决方案。</p>`,
-  },
-]
-
-export function getNewsById(id) {
-  return newsItems.find((n) => n.id === id) || null
-}
 
 export const heroSlides = [
   {
@@ -111,6 +85,47 @@ export const heroSlides = [
   },
 ]
 
+/** 目标站英文版首页轮播（https://www.nuoerbearing.com/en/index.html） */
+export const heroSlidesEn = [
+  {
+    bg: '/resource/n07/assets/images/hero/hero-s2.jpg',
+    h4: 'LQB Brand Bearings',
+    h1: 'High Quality Bearings',
+    p: 'Professional Bearings Manufacturer',
+    h4c: '#ffffff',
+    h1c: '#ffffff',
+    pc: '#ffffff',
+    showBtn: true,
+    btnHref: ROUTE_CN_CONTACT,
+  },
+  {
+    bg: '/resource/n07/assets/images/hero/hero-s3.jpg',
+    h4: 'LQB Brand Bearings',
+    h1: 'High Quality Bearings',
+    p: 'Professional Bearings Manufacturer',
+    h4c: '#000',
+    h1c: '#000',
+    pc: '#000',
+    showBtn: true,
+    btnHref: ROUTE_CN_CONTACT,
+  },
+  {
+    bg: '/resource/n07/assets/images/hero/hero-s4.jpg',
+    h4: 'LQB Brand Bearings',
+    h1: 'High Quality Bearings',
+    p: 'Professional Bearings Manufacturer',
+    h4c: '#000',
+    h1c: '#000',
+    pc: '#000',
+    showBtn: true,
+    btnHref: ROUTE_CN_CONTACT,
+  },
+]
+
+export function getHeroSlides(lang = 'zh') {
+  return lang === 'en' ? heroSlidesEn : heroSlides
+}
+
 /** 产品分类（slug 对应路由 /products/:slug） */
 export const productCategories = [
   { title: '深沟球轴承', slug: 'deep-groove' },
@@ -143,6 +158,47 @@ export const productCategories = [
 
 export function getCategoryBySlug(slug) {
   return productCategories.find((c) => c.slug === slug) || null
+}
+
+export const categoryTitleEnBySlug = {
+  'deep-groove': 'Deep Groove Ball Bearing',
+  'taper-roller': 'Taper Roller Bearing',
+  'pillow-block': 'Pillow Block Bearing',
+  'self-aligning-ball': 'Self-aligning Ball Bearing',
+  'spherical-roller': 'Spherical Roller Bearing',
+  'thrust-ball': 'Thrust Ball Bearing',
+  'angular-contact': 'Angular Contact Ball Bearings',
+  'cylindrical-roller': 'Cylindrical Roller Bearings',
+  'bearing-units': 'Bearing Units',
+  needle: 'Needle Roller Bearings',
+  ceramic: 'Ceramic Bearings',
+  sealed: 'Sealed Bearings',
+  joint: 'Ge Joint Bearing',
+  'rod-end': 'Rod End Joint Bearing',
+  hub: 'Automotive Hub Wheel Bearings',
+}
+
+const productTitleEnBySlug = {
+  'rod-end-sa-tk': 'Rod End Joint Bearing SA..TK Series',
+  'joint-ge': 'Ge Joint Bearing',
+  'self-aligning-2200': 'Self-alignimg Ball Bearing 2200 Series',
+  'spherical-24100': 'Spherical Roller Bearing 24100 Series',
+  'spherical-23100': 'Spherical Roller Bearing 23100 Series',
+  'needle-nk-nks': 'Needle Roller Bearing NK NKS Series',
+  'needle-hk-bk': 'Needle Roller Bearing HK BK Series',
+  'pillow-ucfb': 'Pillow Block Bearing UCFB Series',
+  'needle-k': 'Needle Roller Bearing K Series',
+  'pillow-ucfa': 'Pillow Block Bearing UCFA Series',
+  'pillow-ucpa': 'Pillow Block Bearing UCPA Series',
+  'pillow-ucph': 'Pillow Block Bearing UCPH Series',
+  'pillow-ucfc': 'Pillow Block Bearing UCFC Series',
+  'deep-groove-6400': 'Deep Groove Ball Bearing 6400 Series',
+  'taper-32000': 'Taper Roller Bearing 32000 Series',
+  'deep-groove-6300': 'Deep Groove Ball Bearing 6300 Series',
+  'hub-bearing': 'Automotive Hub Wheel Bearings',
+  'rod-end-pos': 'Rod End Joint Bearing POS Series',
+  'rod-end-phs': 'Rod End Joint Bearing PHS Series',
+  'rod-end-sitk': 'Rod End Joint Bearing SI..TK Series',
 }
 
 /** 推荐产品（slug 唯一；categorySlug 对应 productCategories.slug） */
@@ -308,6 +364,33 @@ export const products = [
     big: '/pic/big/2025-9-17-9-37-33.jpg',
   },
 ]
+
+export function localizeCategory(category, lang = 'zh') {
+  if (!category) return category
+  if (lang !== 'en') return category
+  return {
+    ...category,
+    title: categoryTitleEnBySlug[category.slug] || category.title,
+  }
+}
+
+export function localizeCategories(categories, lang = 'zh') {
+  return categories.map((c) => localizeCategory(c, lang))
+}
+
+export function localizeProduct(product, lang = 'zh') {
+  if (!product) return product
+  if (lang !== 'en') return product
+  return {
+    ...product,
+    title: productTitleEnBySlug[product.slug] || product.title,
+    category: categoryTitleEnBySlug[product.categorySlug] || product.category,
+  }
+}
+
+export function localizeProducts(items, lang = 'zh') {
+  return items.map((p) => localizeProduct(p, lang))
+}
 
 export function getProductBySlug(slug) {
   return products.find((p) => p.slug === slug) || null

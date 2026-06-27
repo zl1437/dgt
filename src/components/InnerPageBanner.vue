@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { ROUTE_HOME } from '../site.js'
+import { useLocale } from '../composables/useLocale'
 
 const props = defineProps({
   pageTitle: { type: String, required: true },
@@ -12,6 +13,8 @@ const props = defineProps({
 const bannerStyle = computed(() => ({
   backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props.bannerBg})`,
 }))
+
+const { t } = useLocale()
 </script>
 
 <template>
@@ -21,7 +24,7 @@ const bannerStyle = computed(() => ({
         <h1>{{ pageTitle }}</h1>
         <ul>
           <li>
-            <RouterLink :to="ROUTE_HOME">首页</RouterLink>
+            <RouterLink :to="ROUTE_HOME">{{ t('nav.home') }}</RouterLink>
           </li>
           <li>&gt;</li>
           <li>{{ pageTitle }}</li>

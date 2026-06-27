@@ -2230,7 +2230,7 @@ hr{margin:0}
     margin-bottom: 27px;
 }
 .hero-section.style-eight .form_box input {
-    background-color: #F4F7FC;
+    background-color: #ffffff;
 }
 .hero-section.style-eight select.Your.Inquiry.About.form-box-input {
     width: 100%;
@@ -2238,7 +2238,7 @@ hr{margin:0}
     padding-left: 15px;
     border: 1px solid #eee;
     margin-bottom: 15px;
-    background-color: #F4F7FC;
+    background-color: #ffffff;
 }
 /*-----------------
 ================ Start Swiper Slider Style
@@ -2679,7 +2679,7 @@ hr{margin:0}
 ============== Start feature area
 ------------------*/
 .feature-area {
-    background: #f4f7fc;
+    background: #ffffff;
 }
 .single-feature-box {
     padding: 40px 30px 35px;
@@ -2741,7 +2741,7 @@ hr{margin:0}
     background: #fff;
 }
 .feature-area.style-two .single-feature-box {
-    background: #f4f7fc;
+    background: #ffffff;
     border: 1px solid #f4f5fe;
 }
 /*----------------
@@ -2776,7 +2776,7 @@ hr{margin:0}
     border-radius: 50%;
 }
 .feature-area.style-three .single-feature-box:before {
-    background: #f4f7fc;
+    background: #ffffff;
     border-radius: 5px;
 }
 .feature-area.style-three .single-feature-box:hover .feature-content-text p{
@@ -2955,7 +2955,7 @@ hr{margin:0}
 }
 /*about area style two*/
 .about-area.style-two {
-    background: #f4f7fc;
+    background: #ffffff;
 }
 .about-area.style-two .about-thumb {
     position: relative;
@@ -3906,7 +3906,7 @@ div#firsttab {
     background: #fff;
 }
 .feature-area.style-two .single-feature-box {
-    background: #f4f7fc;
+    background: #ffffff;
     border: 1px solid #f4f5fe;
 }
 .feature-area.style-two .single-feature-box:hover .feature-btn a{
@@ -3951,7 +3951,7 @@ div#firsttab {
     border-radius: 50%;
 }
 .feature-area.style-three .single-feature-box:before {
-    background: #f4f7fc;
+    background: #ffffff;
     border-radius: 5px;
 }
 .feature-area.style-three .single-feature-box:hover .feature-content-text p{
@@ -3973,7 +3973,7 @@ div#firsttab {
 }
 /*start feature area style three upper*/
 .feature-area.style-three.topper{
-    background: #f4f7fc;
+    background: #ffffff;
     padding: 85px 0 55px;
 }
 .feature-area.style-three.topper .section-head h2 {
@@ -3987,7 +3987,7 @@ div#firsttab {
 }
 /*start feature area style three topper*/
 .feature-area.style-three.topper{
-    background: #f4f7fc;
+    background: #ffffff;
     padding: 85px 0 55px;
 }
 /*-------------
@@ -4070,7 +4070,7 @@ div#firsttab {
 }
 /*about area style eight*/
 .about-section.style-eight {
-    background: #f4f7fc url(assets/images/services/back.png);
+    background: #ffffff url(assets/images/services/back.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -5215,7 +5215,7 @@ transform: translateX(0px);
 }
 /*about sevtion style nine*/
 .about-section.style-nine {
-    background: #f4f7fc;
+    background: #ffffff;
 }
 .about-section.style-nine .about-content-container {
    padding-left: 0;
@@ -5816,14 +5816,14 @@ transform: translateX(0px);
 ============== Start Brand Section Style Two
 -------------------*/
 .brand-section.style-2 {
-	background: #f4f7fc;
+	background: #ffffff;
 	padding: 30px 0;
 }
 /*------------------
 ============== Start Brand Section Style Two
 -------------------*/
 .brand-section.style-two {
-  background: #f4f7fc;
+  background: #ffffff;
   padding: 20px 0;
 }
 .logo-img a {
@@ -5876,7 +5876,7 @@ transform: translateX(0px);
 ============== Itsoft Start Services Section
 -------------------*/
 .services-section {
-  background: #F4F7FC url(assets/images/services/sv-bg1.png) no-repeat center/cover;
+  background: #ffffff url(assets/images/services/sv-bg1.png) no-repeat center/cover;
 }
 .section-head .section-head-content p {
   font-size: 18px;
@@ -5926,7 +5926,7 @@ transform: translateX(0px);
   color:#FF3C00;
 }
 .services-content-btn {
-  background: #F4F7FC;
+  background: #ffffff;
   position: relative;
   transition: 0.3s;
   overflow: hidden;
@@ -6065,7 +6065,7 @@ transform: translateX(0px);
   margin-bottom: 0;
 }
 .services-section.style-3 {
-  background: #f4f7fc url(assets/images/services/svbg3.png) no-repeat center/cover;
+  background: #ffffff url(assets/images/services/svbg3.png) no-repeat center/cover;
 }
 .services-section.style-3 .services-single-content {
     padding: 56px 29px 52px;
@@ -6220,7 +6220,7 @@ transform: translateX(0px);
 ============== Start Service-Section Style Five
 -------------------*/
 .service-section {
-  background: #f4f7fc;
+  background: #ffffff;
 }
 .service-number {
 	color: #FF3C00;
@@ -6269,7 +6269,7 @@ transform: translateX(0px);
 }
 /*procces section style two*/
 .process-section.style-two {
-    background: #f4f7fc;
+    background: #ffffff;
 }
 .process-section.style-two.process-section .section-head {
     text-align: left;
@@ -6591,7 +6591,7 @@ transform: translateX(0px);
     color: #FF3C00;
 }
 .service-section.style-fiveteen {
-    background: #F4F7FCD1;
+    background: #ffffffD1;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -8296,7 +8296,7 @@ Lines Area Style
 ================ Itsoft Start Portfolio Section
 --------------------*/
 .portfolio-section.style-2 {
-  background: #f4f7fc;
+  background: #ffffff;
 }
 .portfolio-section.style-2 .section-head .section-head-content p { 
   font-size: 18px;
@@ -9508,7 +9508,7 @@ Lines Area Style
 }
 /*counter area style five*/
 .counter-section.style-five {
-    background: #f4f7fc;
+    background: #ffffff;
     padding: 61px 0 69px;
 }
 /*------------------
@@ -9709,7 +9709,7 @@ Lines Area Style
 ================ Start Team Section Style-Two
 --------------------*/
 .team-section-head.style-2 {
-  background: #f4f7fc;
+  background: #ffffff;
 }
 /*--------------------
 ================ Start Team Section Style-Three
@@ -9737,7 +9737,7 @@ Lines Area Style
 ================ Start Team Section Style-Five
 --------------------*/
 .team-section.style-5 {
-  background: #f4f7fc !important;
+  background: #ffffff !important;
   margin-top: 0 !important;
 }
 .team-section.style-5{
@@ -9893,7 +9893,7 @@ Lines Area Style
 }
 .appointment-input {
   width: 100%;
-  background: #F4F7FC;
+  background: #ffffff;
   padding: 15px 20px;
   border: 1px solid #f2f2f2;
   border-radius: 5px;
@@ -10002,7 +10002,7 @@ textarea::placeholder{
 ============== Itsoft Start Case Study Section
 ------------------*/
 .section-head.style-2{
-  background: linear-gradient(360deg, rgba(255, 60, 0, 0.87), rgba(241, 141, 1, 0.87)), #f4f7fc url(assets/images/case-study/pd-sh.jpg) center center/cover no-repeat scroll;
+  background: linear-gradient(360deg, rgba(255, 60, 0, 0.87), rgba(241, 141, 1, 0.87)), #ffffff url(assets/images/case-study/pd-sh.jpg) center center/cover no-repeat scroll;
 }
 .case-study-single-item{
   overflow: hidden;
@@ -10091,7 +10091,7 @@ textarea::placeholder{
 }
 /*section head style eight*/
 .section-head.style-eight{
-  background: linear-gradient(360deg, rgba(255, 60, 0, 0.87), rgba(241, 141, 1, 0.87)), #f4f7fc url(assets/images/case-study/pd-sh.jpg) center center/cover no-repeat scroll;
+  background: linear-gradient(360deg, rgba(255, 60, 0, 0.87), rgba(241, 141, 1, 0.87)), #ffffff url(assets/images/case-study/pd-sh.jpg) center center/cover no-repeat scroll;
 }
 .section-head.style-eight .section-head h5 {
     color: #fff;
@@ -10202,7 +10202,7 @@ textarea::placeholder{
 ============= Start industries area
 -------------------*/ 
 .industries-area {
-    background: #f4f7fc;
+    background: #ffffff;
 }
 .industries-area .section-head h3 {
     margin-bottom: 25px;
@@ -10533,7 +10533,7 @@ Itsoft Start Call Do Action Section
 	font-weight: 500;
 }
 .call-do-action-2 {
-  background: #f4f7fc;
+  background: #ffffff;
   padding-top: 350px;
 }
 .cda-2-content h4{
@@ -10735,7 +10735,7 @@ Itsoft Start Call Do Action Section
 -------------------*/
 .testimonial-section.style-5 {
   margin-top: 0 !important;
-  background: #f4f7fc;
+  background: #ffffff;
 }
 .testimonial-section.style-5 .testimonial-content-text {
   font-style: italic;
@@ -10830,7 +10830,7 @@ Itsoft Start Call Do Action Section
 }
 /*testimonial section style seven*/
 .testimonial-section.style-seven {
-    background: #f4f7fc;
+    background: #ffffff;
     margin-top: 0;
 }
 .testimonial-section.style-seven .section-head h2 {
@@ -10841,7 +10841,7 @@ Itsoft Start Call Do Action Section
 }
 /*testimonial section style three topper*/
 .testimonial-section.style-three.topper {
-    background: #f4f7fc;
+    background: #ffffff;
     margin-top: 0;
 }
 .testimonial-section.style-three.topper .section-head h3 {
@@ -11256,11 +11256,11 @@ Itsoft Start Call Do Action Section
 ============= Start Blog Section Style Four
 -------------------*/
 .blog-section.bg-2 {
-  background: #f4f7fc;
+  background: #ffffff;
   margin-bottom: 0;
 }
 .bg-2 {
-  background: #f4f7fc;
+  background: #ffffff;
 }
 .bg-1 {
   background: #fff;
@@ -11386,7 +11386,7 @@ Itsoft Start Call Do Action Section
 }
 /*blog sevtion topper-three*/
 .blog-section.upper-three{
-  background: #f4f7fc;
+  background: #ffffff;
 }
 .blog-section.upper-three .section-head h2 {
     font-size: 35px;
@@ -11668,7 +11668,7 @@ Itsoft Start Call Do Action Section
   background: #b32a00;
 }
 .pricing-section.style-two {
-    background: #f4f7fc;
+    background: #ffffff;
 }
 .subscribe-section.style-two .row.footer-hr.two {
     padding-top: 153px;
@@ -12273,7 +12273,7 @@ input.subscribe-mail-box {
   width: 70%;
   padding: 14px;
   border: 1px solid #eee;
-  background: #f4f7fc;
+  background: #ffffff;
   border-radius: 5px;
   color: #666;
   margin-bottom: 20px;
@@ -12304,7 +12304,7 @@ input.subscribe-mail-box {
 }
 .pointment-single-feature {
   text-align: center;
-  background: #f4f7fc;
+  background: #ffffff;
   border-radius: 10px;
   margin-top: 30px;
 } 

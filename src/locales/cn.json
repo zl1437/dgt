@@ -1,0 +1,123 @@
+{
+  "site": {
+    "name": "上海赛铌斯实业有限公司"
+  },
+  "pageTitle": {
+    "about": "关于我们",
+    "case": "案例展示",
+    "contact": "联系我们",
+    "products": "产品中心"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "products": "产品中心",
+    "case": "案例展示",
+    "contact": "联系我们"
+  },
+  "common": {
+    "learnMore": "更多",
+    "readMore": "更多",
+    "address": "地址",
+    "phone": "电话",
+    "email": "邮箱",
+    "website": "网址",
+    "notFound": "未找到",
+    "searchPlaceholder": "输入关键字搜索",
+    "submit": "提交留言",
+    "submitting": "提交中..."
+  },
+  "form": {
+    "title": "留言内容",
+    "namePlaceholder": "您的称呼",
+    "emailPlaceholder": "您的邮箱",
+    "messagePlaceholder": "留言内容",
+    "fillAll": "请完整填写姓名、邮箱和留言内容。",
+    "success": "留言提交成功。",
+    "fail": "提交失败，请稍后重试。"
+  },
+  "footer": {
+    "aboutTitle": "关于我们",
+    "aboutBody": "我们始终以“技术为本、品质为根”为核心理念：团队汇聚10余年行业经验的研发与生产专家，深耕材料科学、精密加工与仿真测试技术，确保每一款产品兼具性能与耐用性；生产基地引进国际先进的智能化生产线，从原材料筛选到成品检测，全流程严格遵循ISO国际质量标准，以“零缺陷”出厂为目标，为客户创造可信赖的价值。",
+    "contactTitle": "联系我们",
+    "copyright": "© 2026 - 上海赛铌斯实业有限公司 版权所有."
+  },
+  "home": {
+    "recommendProducts": "推荐产品",
+    "newProducts": "新产品",
+    "about": {
+      "sectionTag": "关于我们",
+      "sectionTitle": "关于我们",
+      "companyH5": "上海赛铌斯实业有限公司",
+      "introP": "Synergy 是您值得信赖的工业动力伙伴。自 1997 年在上海国际机电五金城启航以来，我们从一家专注日本优质轴承的贸易公司，稳步成长为集研发、制造与服务于一体的行业领先者。为了更敏捷地响应市场需求，我们于 2007 年先后在山东和宁波建立了现代化的生产基地。凭借卓越的制造能力，Synergy 赢得了国际巨头 JTEKT (Koyo) 的深度认可，成为其球轴承、滚子轴承及相关产品的官方授权制造商与经销商。我们不仅提供产品，更提供价值。凭借深耕行业 30 余年的底蕴，Synergy 致力于通过精准的技术方案与无忧的售后支持，为客户的业务运营保驾护航。精益运营： 持续优化业务流程，驱动销售与服务效率的双重提升。降本增效： 通过高可靠性产品减少设备停机时间，显著降低客户的总体拥有成本（TCO）。全球视野： 以前瞻性的创新理念和强有力的战略伙伴关系，开拓全球增长新版图。"
+    },
+    "advantages": {
+      "sectionTag": "我们的优势",
+      "sectionTitle": "我们能提供什么"
+    },
+    "services": [
+      {
+        "title": "服务：365天全程服务",
+        "html": "<p>强大的售后服务系统，全年在线，完美解答售后客户销售系列问题</p>"
+      },
+      {
+        "title": "营销：全网品牌推广",
+        "html": "<p>与各大互联网平台合作，全国联动营销推广。</p>"
+      },
+      {
+        "title": "指导：一对一指导",
+        "html": "<p>终端门店开业支持，免费提供店面搭配、形象设计。</p>"
+      },
+      {
+        "title": "团队：团队保障",
+        "html": "<p>强大的生产团队、研发团队、营销团队，实力保证。</p>"
+      }
+    ],
+    "teamCase": {
+      "sectionTag": "案例展示",
+      "sectionTitle": "产品应用场景",
+      "body": "这里写一些中文的案例应用场景说明，或者其他内容都可以这里写一些中文的案例应用场景说明，或者其他内容都可以这里写一些中文的案例应用场景说明，或者其他内容都可以这里写一些中文的案例应用场景说明，或者其他内容都可以"
+    },
+    "testimonial": {
+      "sectionTag": "用户评价",
+      "sectionTitle": "我们的客户这么说",
+      "quote": "例如这家企业很棒，Sorem ipsum dolor sit amet there any consectetur adipisicing eliter sed do the eiusmod tempor asem incididunt ut labore dolore magna aliqua. Ut enim adern minim.",
+      "author": "娃哈哈",
+      "role": "优秀企业家"
+    },
+    "caseAlt": "案例展示"
+  },
+  "aboutPage": {
+    "companyH5": "上海赛铌斯实业有限公司",
+    "intro": "Synergy 是您值得信赖的工业动力伙伴。自 1997 年在上海国际机电五金城启航以来，我们从一家专注日本优质轴承的贸易公司，稳步成长为集研发、制造与服务于一体的行业领先者。为了更敏捷地响应市场需求，我们于 2007 年先后在山东和宁波建立了现代化的生产基地。凭借卓越的制造能力，Synergy 赢得了国际巨头 JTEKT (Koyo) 的深度认可，成为其球轴承、滚子轴承及相关产品的官方授权制造商与经销商。我们不仅提供产品，更提供价值。凭借深耕行业 30 余年的底蕴，Synergy 致力于通过精准的技术方案与无忧的售后支持，为客户的业务运营保驾护航。精益运营： 持续优化业务流程，驱动销售与服务效率的双重提升。降本增效： 通过高可靠性产品减少设备停机时间，显著降低客户的总体拥有成本（TCO）。全球视野： 以前瞻性的创新理念和强有力的战略伙伴关系，开拓全球增长新版图。",
+    "imageAlt": "上海赛铌斯实业有限公司"
+  },
+  "casePage": {
+    "sectionTag": "案例展示",
+    "sectionTitle": "产品应用场景",
+    "body": "以下为典型产品应用场景与效果图展示，涵盖工业机械、农机、工程机械等多领域配套轴承应用。",
+    "imageAlt": "案例展示"
+  },
+  "product": {
+    "center": "产品中心",
+    "searchSummary": "搜索「{q}」的结果（{n}条）",
+    "searchResults": "搜索结果",
+    "noResults": "无匹配产品，请尝试其它关键字。",
+    "display": "产品展示",
+    "listSuffix": "产品列表",
+    "categoryFallback": "产品分类",
+    "detailFallback": "产品详情",
+    "clickLarge": "点击图片查看大图",
+    "categoryLabel": "所属分类：",
+    "backToProducts": "返回产品中心",
+    "categoryEmpty": "该分类暂无线上陈列样品，欢迎来电或邮件咨询定制。",
+    "categoryMissing": "不存在的产品分类。",
+    "productMissing": "该产品不存在。",
+    "sidebarSearch": "产品搜索",
+    "sidebarCatalog": "产品目录",
+    "searchAria": "搜索"
+  },
+  "meta": {
+    "testimonialAlt": "娃哈哈"
+  }
+}

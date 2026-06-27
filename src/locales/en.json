@@ -1,0 +1,123 @@
+{
+  "site": {
+    "name": "Shanghai Synergy Industrial Co., Ltd."
+  },
+  "pageTitle": {
+    "about": "About Us",
+    "case": "Case",
+    "contact": "Contact Us",
+    "products": "Products"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "case": "Case",
+    "contact": "Contact Us"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "website": "Website",
+    "notFound": "Not Found",
+    "searchPlaceholder": "Search products",
+    "submit": "Submit",
+    "submitting": "Submitting..."
+  },
+  "form": {
+    "title": "Leave a Message",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "messagePlaceholder": "Message",
+    "fillAll": "Please fill in name, email and message.",
+    "success": "Message submitted successfully.",
+    "fail": "Submit failed. Please try again later."
+  },
+  "footer": {
+    "aboutTitle": "About Us",
+    "aboutBody": "We always take technology and quality as our core values. With experienced R&D and production teams plus strict ISO quality control, we deliver reliable bearings and supporting solutions.",
+    "contactTitle": "Contact Us",
+    "copyright": "© 2026 - Shanghai Synergy Industrial Co., Ltd. all rights reserved."
+  },
+  "home": {
+    "recommendProducts": "Recommend Products",
+    "newProducts": "New Products",
+    "about": {
+      "sectionTag": "About Our Company",
+      "sectionTitle": "Company Profile",
+      "companyH5": "Shanghai Synergy Industrial Co., Ltd.",
+      "introP": "Synergy is your trusted partner in industrial power and motion. Since our inception in 1997 at the Shanghai International Electromechanical Hardware Mall, we have evolved from a trading company specializing in premium Japanese bearings into an industry leader that integrates Research & Development (R&D), manufacturing, and professional services.To respond to market demands with greater agility, we established modern production bases in Shandong and Ningbo in 2007. Leveraging our exceptional manufacturing capabilities, Synergy has earned the profound trust of the international giant JTEKT (Koyo), becoming an authorized manufacturer and distributor for their ball bearings, roller bearings, and related products.We deliver more than just products—we deliver value. With over 30 years of deep industry expertise, Synergy is dedicated to safeguarding our customers' operations through precise technical solutions and worry-free after-sales support.Our MissionLean Operations: Continuously optimizing business processes to drive a dual boost in sales and service efficiency.Cost Reduction & Efficiency: Reducing equipment downtime through high-reliability products, significantly lowering our customers' Total Cost of Ownership (TCO).Global Vision: Expanding our global growth footprint through forward-looking innovation and strong strategic partnerships."
+    },
+    "advantages": {
+      "sectionTag": "Our Advantages",
+      "sectionTitle": "What We Provide"
+    },
+    "services": [
+      {
+        "title": "Global Experience",
+        "html": "<p>It is a long established fact that a reader will distracted by the readable content of a page when looking at its layout.</p>"
+      },
+      {
+        "title": "Customer Support",
+        "html": "<p>Cooperate with major Internet platforms to promote nationwide linkage marketing.</p>"
+      },
+      {
+        "title": "Data Science",
+        "html": "<p>Core technology and continuous innovation support high-quality bearing manufacturing.</p>"
+      },
+      {
+        "title": "Machine Learning",
+        "html": "<p>Strong production, R&D and marketing teams ensure stable delivery and service quality.</p>"
+      }
+    ],
+    "teamCase": {
+      "sectionTag": "Products Case",
+      "sectionTitle": "Application Scenarios",
+      "body": "Aliquam sodales justo sit amet urna auctor scelerisque, interdum leo at tempus enim. Present egestas hendrerit nibh vitae ornare."
+    },
+    "testimonial": {
+      "sectionTag": "Client Testimonial",
+      "sectionTitle": "What Our Clients Say",
+      "quote": "Sorem ipsum dolor sit amet there any consectetur adipisicing eliter sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
+      "author": "John Abraham",
+      "role": "Apple Inc"
+    },
+    "caseAlt": "Case"
+  },
+  "aboutPage": {
+    "companyH5": "Shanghai Synergy Industrial Co., Ltd.",
+    "intro": "Synergy is your trusted partner in industrial power and motion. Since our inception in 1997 at the Shanghai International Electromechanical Hardware Mall, we have evolved from a trading company specializing in premium Japanese bearings into an industry leader that integrates Research & Development (R&D), manufacturing, and professional services.To respond to market demands with greater agility, we established modern production bases in Shandong and Ningbo in 2007. Leveraging our exceptional manufacturing capabilities, Synergy has earned the profound trust of the international giant JTEKT (Koyo), becoming an authorized manufacturer and distributor for their ball bearings, roller bearings, and related products.We deliver more than just products—we deliver value. With over 30 years of deep industry expertise, Synergy is dedicated to safeguarding our customers' operations through precise technical solutions and worry-free after-sales support.Our MissionLean Operations: Continuously optimizing business processes to drive a dual boost in sales and service efficiency.Cost Reduction & Efficiency: Reducing equipment downtime through high-reliability products, significantly lowering our customers' Total Cost of Ownership (TCO).Global Vision: Expanding our global growth footprint through forward-looking innovation and strong strategic partnerships.",
+    "imageAlt": "Shanghai Synergy Industrial Co., Ltd."
+  },
+  "casePage": {
+    "sectionTag": "Products Case",
+    "sectionTitle": "Application Scenarios",
+    "body": "Typical product application scenarios and effect images for industrial machinery, agricultural machinery and engineering machinery.",
+    "imageAlt": "Case"
+  },
+  "product": {
+    "center": "Products",
+    "searchSummary": "Search results for \"{q}\" ({n} items)",
+    "searchResults": "Search Results",
+    "noResults": "No matching products found.",
+    "display": "Products Display",
+    "listSuffix": "Product List",
+    "categoryFallback": "Product Category",
+    "detailFallback": "Product Details",
+    "clickLarge": "Click image to view large size",
+    "categoryLabel": "Category: ",
+    "backToProducts": "Back to Products",
+    "categoryEmpty": "No online samples in this category yet. Contact us for customization.",
+    "categoryMissing": "Product category does not exist.",
+    "productMissing": "This product does not exist.",
+    "sidebarSearch": "Product search",
+    "sidebarCatalog": "Product Catalog",
+    "searchAria": "Search"
+  },
+  "meta": {
+    "testimonialAlt": "John Abraham"
+  }
+}

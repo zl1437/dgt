@@ -1,8 +1,9 @@
 <script setup>
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
-import { img, productDetailPath } from '../site.js'
+import { img, localizeProducts, productDetailPath } from '../site.js'
 
-defineProps({
+const props = defineProps({
   title: { type: String, required: true },
   items: { type: Array, required: true },
   /** 与主题一致的外层修饰，如 bg-2 */
@@ -11,23 +12,27 @@ defineProps({
   showSectionHead: { type: Boolean, default: true },
   /** 两栏布局左侧嵌入时：不占满屏宽、与侧栏对齐 */
   embedded: { type: Boolean, default: false },
+  /** 语言：zh / en */
+  lang: { type: String, default: 'zh' },
 })
+
+const displayItems = computed(() => localizeProducts(props.items, props.lang))
 </script>
 
 <template>
   <div
-    :class="['portfolio-section', 'style-2', embedded ? 'pt-0' : 'pt-75', sectionClass].filter(Boolean)"
+    :class="['portfolio-section', 'style-2', props.embedded ? 'pt-0' : 'pt-75', props.sectionClass].filter(Boolean)"
   >
-    <div :class="embedded ? 'container-fluid px-0' : 'container'">
-      <div v-if="showSectionHead" class="section-head text-center pb-60">
-        <h5>// {{ title }}</h5>
-        <h2>{{ title }}</h2>
+    <div :class="props.embedded ? 'container-fluid px-0' : 'container'">
+      <div v-if="props.showSectionHead" class="section-head text-center pb-60">
+        <h5>// {{ props.title }}</h5>
+        <h2>{{ props.title }}</h2>
         <span class="section-head-bar-2"></span>
       </div>
 
       <div class="row image_load">
         <div
-          v-for="(p, idx) in items"
+          v-for="(p, idx) in displayItems"
           :key="p.slug || idx"
           class="col-lg-3 col-md-6 col-sm-6 col-6 p-0 grid-item design cemes"
         >

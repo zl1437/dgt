@@ -2,24 +2,23 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import AboutPage from '../views/AboutPage.vue'
 import CasePage from '../views/CasePage.vue'
-import NewsPage from '../views/NewsPage.vue'
-import NewsDetailPage from '../views/NewsDetailPage.vue'
 import ContactPage from '../views/ContactPage.vue'
 import ProductIndex from '../views/ProductIndex.vue'
 import ProductCategoryPage from '../views/ProductCategoryPage.vue'
 import ProductDetailPage from '../views/ProductDetailPage.vue'
 import {
-  getNewsById,
   getProductBySlug,
   getCategoryBySlug,
+  localizeCategory,
+  localizeProduct,
   DEFAULT_INNER_BANNER_BG,
   ROUTE_HOME,
   ROUTE_CN_ABOUT,
   ROUTE_CN_CASE,
-  ROUTE_CN_NEWS,
   ROUTE_CN_CONTACT,
   ROUTE_PRODUCTS,
 } from '../site.js'
+import { translate } from '../locales/translate.js'
 
 const routes = [
   { path: ROUTE_HOME, name: 'home', component: Home },
@@ -27,37 +26,25 @@ const routes = [
     path: ROUTE_CN_ABOUT,
     name: 'cnabout',
     component: AboutPage,
-    meta: { pageTitle: '关于我们', bannerBg: DEFAULT_INNER_BANNER_BG },
+    meta: { pageTitleKey: 'about', bannerBg: DEFAULT_INNER_BANNER_BG },
   },
   {
     path: ROUTE_CN_CASE,
     name: 'cncase',
     component: CasePage,
-    meta: { pageTitle: '案例展示', bannerBg: DEFAULT_INNER_BANNER_BG },
-  },
-  {
-    path: ROUTE_CN_NEWS,
-    name: 'c_news',
-    component: NewsPage,
-    meta: { pageTitle: '新闻中心', bannerBg: DEFAULT_INNER_BANNER_BG },
-  },
-  {
-    path: `${ROUTE_CN_NEWS}/:id`,
-    name: 'news-detail',
-    component: NewsDetailPage,
-    meta: { bannerBg: DEFAULT_INNER_BANNER_BG },
+    meta: { pageTitleKey: 'case', bannerBg: DEFAULT_INNER_BANNER_BG },
   },
   {
     path: ROUTE_CN_CONTACT,
     name: 'cncontact',
     component: ContactPage,
-    meta: { pageTitle: '联系我们', bannerBg: DEFAULT_INNER_BANNER_BG },
+    meta: { pageTitleKey: 'contact', bannerBg: DEFAULT_INNER_BANNER_BG },
   },
   {
     path: ROUTE_PRODUCTS,
     name: 'products',
     component: ProductIndex,
-    meta: { pageTitle: '产品中心', bannerBg: DEFAULT_INNER_BANNER_BG },
+    meta: { pageTitleKey: 'products', bannerBg: DEFAULT_INNER_BANNER_BG },
   },
   {
     path: `${ROUTE_PRODUCTS}/item/:slug`,
@@ -81,28 +68,38 @@ const router = createRouter({
   },
 })
 
-const DEFAULT_TITLE = '上海赛铌斯实业有限公司'
+function docLang(query) {
+  return query.lang === 'en' ? 'en' : 'zh'
+}
 
-router.afterEach((to) => {
-  if (to.name === 'news-detail') {
-    const a = getNewsById(to.params.id)
-    document.title = a ? `${a.title} - ${DEFAULT_TITLE}` : DEFAULT_TITLE
+router.beforeEach((to, from, next) => {
+  if (from.query.lang === 'en' && !('lang' in to.query)) {
+    next({ path: to.path, query: { ...to.query, lang: 'en' }, hash: to.hash })
     return
   }
+  next()
+})
+
+router.afterEach((to) => {
+  const lang = docLang(to.query)
+  const siteTitle = translate(lang, 'site.name')
   if (to.name === 'product-detail') {
     const p = getProductBySlug(to.params.slug)
-    document.title = p ? `${p.title} - ${DEFAULT_TITLE}` : DEFAULT_TITLE
+    const pp = lang === 'en' ? localizeProduct(p, 'en') : p
+    document.title = pp ? `${pp.title} - ${siteTitle}` : siteTitle
     return
   }
   if (to.name === 'product-category') {
     const c = getCategoryBySlug(to.params.slug)
-    document.title = c ? `${c.title} - ${DEFAULT_TITLE}` : DEFAULT_TITLE
+    const cc = lang === 'en' ? localizeCategory(c, 'en') : c
+    document.title = cc ? `${cc.title} - ${siteTitle}` : siteTitle
     return
   }
   if (to.name === 'home') {
-    document.title = DEFAULT_TITLE
-  } else if (to.meta?.pageTitle) {
-    document.title = `${to.meta.pageTitle} - ${DEFAULT_TITLE}`
+    document.title = siteTitle
+  } else if (to.meta?.pageTitleKey) {
+    const title = translate(lang, `pageTitle.${to.meta.pageTitleKey}`)
+    document.title = `${title} - ${siteTitle}`
   }
 })
 

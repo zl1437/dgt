@@ -2,10 +2,12 @@
 import { ref, watch, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { RouterLink } from 'vue-router'
-import { productCategories, productCategoryPath, ROUTE_PRODUCTS } from '../site.js'
+import { localizeCategories, productCategories, productCategoryPath, ROUTE_PRODUCTS } from '../site.js'
+import { useLocale } from '../composables/useLocale'
 
 const route = useRoute()
 const router = useRouter()
+const { lang, t } = useLocale()
 
 const q = ref('')
 
@@ -13,6 +15,7 @@ const activeSlug = computed(() => {
   if (route.name === 'product-category') return String(route.params.slug || '')
   return ''
 })
+const displayCategories = computed(() => localizeCategories(productCategories, lang.value))
 
 watch(
   () => route.query.q,
@@ -35,17 +38,17 @@ function isActive(slug) {
 <template>
   <aside class="product-sidebar">
     <form class="product-sidebar__search" @submit.prevent="onSearchSubmit">
-      <input v-model="q" type="search" name="product-q" placeholder="产品搜索" autocomplete="off" />
-      <button type="submit" class="product-sidebar__search-btn" aria-label="搜索">
+      <input v-model="q" type="search" name="product-q" :placeholder="t('product.sidebarSearch')" autocomplete="off" />
+      <button type="submit" class="product-sidebar__search-btn" :aria-label="t('product.searchAria')">
         <i class="fas fa-search"></i>
       </button>
     </form>
 
     <div class="product-sidebar__catalog">
-      <h3 class="product-sidebar__catalog-title">产品目录</h3>
+      <h3 class="product-sidebar__catalog-title">{{ t('product.sidebarCatalog') }}</h3>
       <span class="product-sidebar__catalog-accent" aria-hidden="true"></span>
       <ul class="product-sidebar__list">
-        <li v-for="c in productCategories" :key="c.slug" class="product-sidebar__group">
+        <li v-for="c in displayCategories" :key="c.slug" class="product-sidebar__group">
           <RouterLink
             class="product-sidebar__link"
             :class="{ 'is-active': isActive(c.slug) }"

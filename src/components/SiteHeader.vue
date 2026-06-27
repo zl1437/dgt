@@ -2,10 +2,10 @@
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 import {
-  REMOTE_SITE,
   img,
   productCategories,
   productCategoryPath,
+  localizeCategories,
   socialIcons,
   MAILTO,
   CONTACT_EMAIL,
@@ -16,13 +16,16 @@ import {
   ROUTE_HOME,
   ROUTE_CN_ABOUT,
   ROUTE_CN_CASE,
-  ROUTE_CN_NEWS,
   ROUTE_CN_CONTACT,
   ROUTE_PRODUCTS,
 } from '../site.js'
+import { useLocale } from '../composables/useLocale'
 
 const route = useRoute()
 const router = useRouter()
+const { lang, t, switchLang } = useLocale()
+
+const localizedCategories = computed(() => localizeCategories(productCategories, lang.value))
 
 const mobileOpen = ref(false)
 const searchOpen = ref(false)
@@ -141,7 +144,7 @@ function onSearchSubmit() {
                   </li>
                   <li class="header-lang-item">
                     <div class="header-lang-switch">
-                      <a class="header-lang-btn" :href="`${REMOTE_SITE}/index.html`">
+                      <button type="button" class="header-lang-btn" @click="switchLang('en')">
                         <img
                           class="header-lang-flag"
                           src="/resource/n07/function/images/en.jpg"
@@ -149,8 +152,8 @@ function onSearchSubmit() {
                           alt="English"
                         />
                         <span class="header-lang-label">English</span>
-                      </a>
-                      <RouterLink class="header-lang-btn" :to="ROUTE_HOME">
+                      </button>
+                      <button type="button" class="header-lang-btn" @click="switchLang('zh')">
                         <img
                           class="header-lang-flag"
                           src="/resource/n07/function/images/cn.jpg"
@@ -158,7 +161,7 @@ function onSearchSubmit() {
                           alt="中文"
                         />
                         <span class="header-lang-label">中文</span>
-                      </RouterLink>
+                      </button>
                     </div>
                   </li>
                 </ul>
@@ -180,11 +183,9 @@ function onSearchSubmit() {
 
           <nav>
             <ul>
+              <li><RouterLink :to="ROUTE_HOME" @click="closeMenu">{{ t('nav.home') }}</RouterLink></li>
               <li>
-                <RouterLink :to="ROUTE_HOME" @click="closeMenu">首页</RouterLink>
-              </li>
-              <li>
-                <RouterLink :to="ROUTE_CN_ABOUT" @click="closeMenu">关于我们</RouterLink>
+                <RouterLink :to="ROUTE_CN_ABOUT" @click="closeMenu">{{ t('nav.about') }}</RouterLink>
               </li>
               <li class="has-sub">
                 <RouterLink
@@ -192,23 +193,20 @@ function onSearchSubmit() {
                   :class="{ 'router-link-active': isProductsActive }"
                   @click="onProductNavClick"
                 >
-                  产品中心<i class="fas fa-angle-down"></i><span><i class="fas fa-angle-right"></i></span>
+                  {{ t('nav.products') }}<i class="fas fa-angle-down"></i><span><i class="fas fa-angle-right"></i></span>
                 </RouterLink>
                 <ul v-show="isDesktop || productSubOpen" class="sub-menu">
-                  <li v-for="c in productCategories" :key="c.slug">
+                  <li v-for="c in localizedCategories" :key="c.slug">
                     <RouterLink :to="productCategoryPath(c.slug)" :title="c.title" @click="closeMenu">{{ c.title }}</RouterLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <RouterLink :to="ROUTE_CN_CASE" @click="closeMenu">案例展示</RouterLink>
-              </li>
-              <li>
-                <RouterLink :to="ROUTE_CN_NEWS" @click="closeMenu">新闻中心</RouterLink>
+                <RouterLink :to="ROUTE_CN_CASE" @click="closeMenu">{{ t('nav.case') }}</RouterLink>
               </li>
               <li>
                 <RouterLink :to="ROUTE_CN_CONTACT" @click="closeMenu">
-                  联系我们<span class="mobile-menu-icon"><i class="fas fa-angle-right"></i></span>
+                  {{ t('nav.contact') }}<span class="mobile-menu-icon"><i class="fas fa-angle-right"></i></span>
                 </RouterLink>
               </li>
             </ul>
@@ -220,14 +218,14 @@ function onSearchSubmit() {
 
             <div class="d-lg-none mobile-lang-bar">
               <div class="header-lang-switch header-lang-switch--mobile">
-                <a class="header-lang-btn" :href="`${REMOTE_SITE}/index.html`">
+                <button type="button" class="header-lang-btn" @click="switchLang('en')">
                   <img class="header-lang-flag" src="/resource/n07/function/images/en.jpg" title="ENGLISH" alt="English" />
                   <span class="header-lang-label">English</span>
-                </a>
-                <RouterLink class="header-lang-btn" :to="ROUTE_HOME">
+                </button>
+                <button type="button" class="header-lang-btn" @click="switchLang('zh')">
                   <img class="header-lang-flag" src="/resource/n07/function/images/cn.jpg" title="中文版" alt="中文" />
                   <span class="header-lang-label">中文</span>
-                </RouterLink>
+                </button>
               </div>
             </div>
           </nav>
@@ -245,7 +243,7 @@ function onSearchSubmit() {
           <i class="fas fa-times"></i>
         </button>
         <form class="search-form" @submit.prevent="onSearchSubmit">
-          <input type="search" name="s" placeholder="输入关键字搜索" />
+          <input type="search" name="s" :placeholder="t('common.searchPlaceholder')" />
         </form>
       </div>
     </Teleport>
@@ -284,6 +282,8 @@ function onSearchSubmit() {
   border-radius: 4px;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+  font: inherit;
 }
 .header-lang-btn:hover {
   text-decoration: none;
