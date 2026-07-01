@@ -14,7 +14,6 @@ const { lang, t } = useLocale()
           <div class="row align-items-center">
             <div class="col-sm-12 col-md-12 col-lg-3">
               <div class="section-title pb-10">
-                <h5>// {{ t('casePage.sectionTag') }}</h5>
                 <h3>{{ t('casePage.sectionTitle') }}</h3>
               </div>
             </div>

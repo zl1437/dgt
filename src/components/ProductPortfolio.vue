@@ -25,9 +25,7 @@ const displayItems = computed(() => localizeProducts(props.items, props.lang))
   >
     <div :class="props.embedded ? 'container-fluid px-0' : 'container'">
       <div v-if="props.showSectionHead" class="section-head text-center pb-60">
-        <h5>// {{ props.title }}</h5>
         <h2>{{ props.title }}</h2>
-        <span class="section-head-bar-2"></span>
       </div>
 
       <div class="row image_load">

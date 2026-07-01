@@ -47,9 +47,7 @@ const displayServices = computed(() => {
         <div class="row">
           <div class="col-lg-12">
             <div class="section-head text-center pb-60">
-              <h5>// {{ t('home.about.sectionTag') }}</h5>
               <h2>{{ t('home.about.sectionTitle') }}</h2>
-              <span class="section-head-bar-2"></span>
             </div>
           </div>
         </div>
@@ -84,9 +82,7 @@ const displayServices = computed(() => {
         <div class="row">
           <div class="col-lg-12">
             <div class="section-head text-center pb-60">
-              <h5>// {{ t('home.advantages.sectionTag') }}</h5>
               <h2>{{ t('home.advantages.sectionTitle') }}</h2>
-              <span class="section-head-bar-2"></span>
             </div>
           </div>
         </div>
@@ -114,7 +110,6 @@ const displayServices = computed(() => {
           <div class="row align-items-center">
             <div class="col-sm-12 col-md-12 col-lg-3">
               <div class="section-title pb-10">
-                <h5>// {{ t('home.teamCase.sectionTag') }}</h5>
                 <h3>{{ t('home.teamCase.sectionTitle') }}</h3>
               </div>
             </div>
@@ -161,9 +156,7 @@ const displayServices = computed(() => {
         <div class="row">
           <div class="col-lg-12">
             <div class="section-head text-center pb-55">
-              <h5>// {{ t('home.testimonial.sectionTag') }}</h5>
               <h2>{{ t('home.testimonial.sectionTitle') }}</h2>
-              <span class="section-head-bar-2"></span>
             </div>
           </div>
         </div>
