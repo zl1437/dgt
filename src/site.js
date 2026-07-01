@@ -54,9 +54,9 @@ export const showcaseCases = [
 export const heroSlides = [
   {
     bg: '/resource/n07/assets/images/hero/hero-s2.jpg',
-    h4: '我们是轴承工贸一体服务商',
-    h1: '专注轴承外贸行业建设15年',
-    p: '我们客户遍布全球各个大洲，其中亚洲占比40%，欧洲占比25%，南美洲占比20%，非洲占比6%，北美占比9%。',
+    h4: '上海赛铌斯 · Synergy',
+    h1: '专业汽车与工业轴承制造商',
+    p: '深耕轴承研发、制造与外贸30余年，客户遍布亚洲、欧洲、南美洲、非洲及北美，为汽车与工业装备提供可靠旋转支撑方案。',
     h4c: '#ffffff',
     h1c: '#ffffff',
     pc: '#ffffff',
@@ -91,9 +91,9 @@ export const heroSlides = [
 export const heroSlidesEn = [
   {
     bg: '/resource/n07/assets/images/hero/hero-s2.jpg',
-    h4: 'Synergy Bearings',
-    h1: 'Trusted Industrial Power Partner',
-    p: 'Over 30 years of expertise in bearing R&D, manufacturing and global trade — serving customers across Asia, Europe and the Americas.',
+    h4: 'Shanghai Synergy · Synergy Bearings',
+    h1: 'Automotive & Industrial Bearing Manufacturer',
+    p: 'Over 30 years in bearing R&D, manufacturing and global trade — serving customers across Asia, Europe, South America, Africa and North America.',
     h4c: '#ffffff',
     h1c: '#ffffff',
     pc: '#ffffff',
