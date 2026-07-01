@@ -65,7 +65,7 @@ export const heroSlides = [
   },
   {
     bg: '/resource/n07/assets/images/hero/hero-s3.jpg',
-    h4: 'JTEKT（Koyo）官方授权制造商',
+    h4: '国际标准 · 精密制造',
     h1: '高品质精密轴承解决方案',
     p: '深沟球轴承、圆锥滚子轴承、轮毂轴承等全系列产品，服务汽车、工程机械与工业装备等领域。',
     h4c: '#ffffff',
@@ -102,7 +102,7 @@ export const heroSlidesEn = [
   },
   {
     bg: '/resource/n07/assets/images/hero/hero-s3.jpg',
-    h4: 'JTEKT (Koyo) Authorized Manufacturer',
+    h4: 'Precision Manufacturing Excellence',
     h1: 'High-Quality Precision Bearings',
     p: 'Full range of deep groove, taper roller, hub and pillow block bearings for automotive, engineering machinery and industrial equipment.',
     h4c: '#ffffff',
