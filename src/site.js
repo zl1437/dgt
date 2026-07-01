@@ -415,17 +415,17 @@ export function filterProductsByQuery(q) {
 
 export const socialIcons = [
   {
-    href: 'https://www.facebook.com',
+    href: 'https://www.facebook.com/profile.php?id=61580779935613',
     src: '/pic/other/16315208455554075.jpg',
     alt: 'facebook',
   },
+  // {
+  //   href: 'https://www.twitter.com',
+  //   src: '/pic/other/16315208455474973.jpg',
+  //   alt: 'twitter',
+  // },
   {
-    href: 'https://www.twitter.com',
-    src: '/pic/other/16315208455474973.jpg',
-    alt: 'twitter',
-  },
-  {
-    href: 'https://www.linkedin.com/',
+    href: 'https://www.linkedin.com/in/eason-du-855095391',
     src: '/pic/other/16315208452083494.jpg',
     alt: 'linkedin',
   },
