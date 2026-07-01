@@ -67,9 +67,9 @@ onUnmounted(() => {
                 <p><b>{{ t('common.address') }} : </b>上海市嘉定工业区叶城路925号B区4幢J</p>
                 <p>
                   <b>{{ t('common.phone') }}: </b>
-                  <a :href="TEL_MOBILE_HREF">{{ TEL_MOBILE_DISPLAY }}</a>
+                  <a :href="`tel:${TEL_MOBILE_HREF}`">{{ TEL_MOBILE_DISPLAY }}</a>
                   &nbsp;&nbsp;
-                  <a :href="TEL_LANDLINE_HREF">{{ TEL_LANDLINE_DISPLAY }}</a>
+                  <a :href="`tel:${TEL_LANDLINE_HREF}`">{{ TEL_LANDLINE_DISPLAY }}</a>
                 </p>
                 <p>
                   <b>{{ t('common.email') }}: </b>

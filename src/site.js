@@ -20,10 +20,10 @@ export function productDetailPath(slug) {
 
 export const CONTACT_EMAIL = 'easondu@synergybearings.com | vicky@synergybearings.com'
 export const MAILTO = `mailto:${CONTACT_EMAIL}`
-export const TEL_MOBILE_DISPLAY = '+8618839713991 | +8617821086766'
-export const TEL_LANDLINE_DISPLAY = '+8618839713991 | +8617821086766'
-export const TEL_MOBILE_HREF = '+8618839713991 | +8617821086766'
-export const TEL_LANDLINE_HREF = '+8618839713991 | +8617821086766'
+export const TEL_MOBILE_DISPLAY = '+8618839713991'
+export const TEL_LANDLINE_DISPLAY = '+8617821086766'
+export const TEL_MOBILE_HREF = '+8618839713991'
+export const TEL_LANDLINE_HREF = '+8617821086766'
 export const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=8618839713991'
 
 export const PAGE_PRIVACY = `${REMOTE_SITE}/privacy.html`
