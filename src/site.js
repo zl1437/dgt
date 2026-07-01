@@ -45,10 +45,10 @@ export const img = (path) => {
 
 /** 首页案例展示（与案例页共用） */
 export const showcaseCases = [
-  { img: '/pic/small2/5_0.jpg', caption: '产品效果图1' },
-  { img: '/pic/small2/2020-11-19-20-21-35.jpg', caption: '产品效果图2' },
-  { img: '/pic/small2/2020-11-19-20-20-9.jpg', caption: '产品效果图3' },
-  { img: '/pic/small2/2020-11-19-20-19-55.jpg', caption: '产品效果图4' },
+  { img: '/pic/small2/5_0.jpg', caption: '汽车轮毂轴承应用', captionEn: 'Automotive Hub Bearing' },
+  { img: '/pic/small2/2020-11-19-20-21-35.jpg', caption: '工程机械行走机构', captionEn: 'Engineering Machinery Undercarriage' },
+  { img: '/pic/small2/2020-11-19-20-20-9.jpg', caption: '工业减速机配套', captionEn: 'Industrial Reducer Application' },
+  { img: '/pic/small2/2020-11-19-20-19-55.jpg', caption: '农机传动部件', captionEn: 'Agricultural Transmission Parts' },
 ]
 
 export const heroSlides = [
@@ -65,58 +65,60 @@ export const heroSlides = [
   },
   {
     bg: '/resource/n07/assets/images/hero/hero-s3.jpg',
-    h4: '我是横幅标题，标题可有可无',
-    h1: '我是大字体显示位置',
-    p: '这里是详细的介绍，写什么都可以，显示在这里的位置，这里也可根据背景图片设置文字颜色',
-    h4c: '#000',
-    h1c: '#000',
-    pc: '#000',
-    showBtn: false,
+    h4: 'JTEKT（Koyo）官方授权制造商',
+    h1: '高品质精密轴承解决方案',
+    p: '深沟球轴承、圆锥滚子轴承、轮毂轴承等全系列产品，服务汽车、工程机械与工业装备等领域。',
+    h4c: '#ffffff',
+    h1c: '#ffffff',
+    pc: '#ffffff',
+    showBtn: true,
+    btnHref: ROUTE_PRODUCTS,
   },
   {
     bg: '/resource/n07/assets/images/hero/hero-s4.jpg',
-    h4: 'change word color',
-    h1: 'I am the Title I am a free bird',
-    p: 'introduce me It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. fact that a reader will',
-    h4c: '#000',
-    h1c: '#000',
-    pc: '#000',
-    showBtn: false,
-  },
-]
-
-/** 目标站英文版首页轮播（https://www.nuoerbearing.com/en/index.html） */
-export const heroSlidesEn = [
-  {
-    bg: '/resource/n07/assets/images/hero/hero-s2.jpg',
-    h4: 'LQB Brand Bearings',
-    h1: 'High Quality Bearings',
-    p: 'Professional Bearings Manufacturer',
+    h4: '全球化供应与服务',
+    h1: '远销亚洲、欧洲及美洲市场',
+    p: '依托山东、宁波生产基地与上海总部，为客户提供从选型、定制到售后的一站式轴承配套服务。',
     h4c: '#ffffff',
     h1c: '#ffffff',
     pc: '#ffffff',
     showBtn: true,
     btnHref: ROUTE_CN_CONTACT,
   },
+]
+
+/** 目标站英文版首页轮播 */
+export const heroSlidesEn = [
+  {
+    bg: '/resource/n07/assets/images/hero/hero-s2.jpg',
+    h4: 'Synergy Bearings',
+    h1: 'Trusted Industrial Power Partner',
+    p: 'Over 30 years of expertise in bearing R&D, manufacturing and global trade — serving customers across Asia, Europe and the Americas.',
+    h4c: '#ffffff',
+    h1c: '#ffffff',
+    pc: '#ffffff',
+    showBtn: true,
+    btnHref: ROUTE_CN_ABOUT,
+  },
   {
     bg: '/resource/n07/assets/images/hero/hero-s3.jpg',
-    h4: 'LQB Brand Bearings',
-    h1: 'High Quality Bearings',
-    p: 'Professional Bearings Manufacturer',
-    h4c: '#000',
-    h1c: '#000',
-    pc: '#000',
+    h4: 'JTEKT (Koyo) Authorized Manufacturer',
+    h1: 'High-Quality Precision Bearings',
+    p: 'Full range of deep groove, taper roller, hub and pillow block bearings for automotive, engineering machinery and industrial equipment.',
+    h4c: '#ffffff',
+    h1c: '#ffffff',
+    pc: '#ffffff',
     showBtn: true,
-    btnHref: ROUTE_CN_CONTACT,
+    btnHref: ROUTE_PRODUCTS,
   },
   {
     bg: '/resource/n07/assets/images/hero/hero-s4.jpg',
-    h4: 'LQB Brand Bearings',
-    h1: 'High Quality Bearings',
-    p: 'Professional Bearings Manufacturer',
-    h4c: '#000',
-    h1c: '#000',
-    pc: '#000',
+    h4: 'Global Supply & Service',
+    h1: 'Serving Markets Worldwide',
+    p: 'Backed by production bases in Shandong and Ningbo, we deliver one-stop bearing solutions from selection and customization to after-sales support.',
+    h4c: '#ffffff',
+    h1c: '#ffffff',
+    pc: '#ffffff',
     showBtn: true,
     btnHref: ROUTE_CN_CONTACT,
   },

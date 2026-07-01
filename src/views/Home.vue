@@ -137,7 +137,7 @@ const displayServices = computed(() => {
                 <img :src="img(c.img)" :alt="t('home.caseAlt')" loading="lazy" />
               </div>
               <div class="team-member-intro-section">
-                <p>{{ c.caption }}</p>
+                <p>{{ lang === 'en' && c.captionEn ? c.captionEn : c.caption }}</p>
               </div>
             </div>
           </div>

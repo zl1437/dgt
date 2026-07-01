@@ -57,33 +57,33 @@
     },
     "services": [
       {
-        "title": "Global Experience",
-        "html": "<p>It is a long established fact that a reader will distracted by the readable content of a page when looking at its layout.</p>"
+        "title": "Quality: ISO Standards",
+        "html": "<p>From raw material selection to final inspection, every step follows international ISO quality standards with zero-defect delivery as our goal.</p>"
       },
       {
-        "title": "Customer Support",
-        "html": "<p>Cooperate with major Internet platforms to promote nationwide linkage marketing.</p>"
+        "title": "Products: Full Bearing Range",
+        "html": "<p>Deep groove ball bearings, taper roller bearings, hub bearings, pillow block bearings and more — serving automotive, engineering machinery and industrial equipment.</p>"
       },
       {
-        "title": "Data Science",
-        "html": "<p>Core technology and continuous innovation support high-quality bearing manufacturing.</p>"
+        "title": "Engineering: Expert Selection",
+        "html": "<p>Our experienced engineers provide one-on-one bearing selection guidance and custom solutions to match your operating conditions and reduce downtime.</p>"
       },
       {
-        "title": "Machine Learning",
-        "html": "<p>Strong production, R&D and marketing teams ensure stable delivery and service quality.</p>"
+        "title": "Service: Global After-Sales",
+        "html": "<p>365-day technical support with fast response, backed by production bases in Shandong and Ningbo for efficient global delivery and reliable after-sales service.</p>"
       }
     ],
     "teamCase": {
       "sectionTag": "Products Case",
       "sectionTitle": "Application Scenarios",
-      "body": "Aliquam sodales justo sit amet urna auctor scelerisque, interdum leo at tempus enim. Present egestas hendrerit nibh vitae ornare."
+      "body": "Synergy bearings are widely used in passenger and commercial vehicle hub systems, engineering machinery undercarriages, industrial reducers and agricultural transmission components. With high-speed stability, impact resistance and long service life, our products provide reliable power transmission and rotational support, helping customers improve efficiency and lower total cost of ownership."
     },
     "testimonial": {
       "sectionTag": "Client Testimonial",
       "sectionTitle": "What Our Clients Say",
-      "quote": "Sorem ipsum dolor sit amet there any consectetur adipisicing eliter sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
-      "author": "John Abraham",
-      "role": "Apple Inc"
+      "quote": "We have partnered with Synergy for years. Their bearings deliver outstanding durability and consistency, with fast delivery and professional technical support — a trusted long-term supplier in our supply chain.",
+      "author": "Mr. Zhang",
+      "role": "Automotive Parts Procurement Manager"
     },
     "caseAlt": "Case"
   },
@@ -118,6 +118,6 @@
     "searchAria": "Search"
   },
   "meta": {
-    "testimonialAlt": "John Abraham"
+    "testimonialAlt": "Client testimonial"
   }
 }
