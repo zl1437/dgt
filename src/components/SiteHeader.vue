@@ -176,8 +176,16 @@ function onSearchSubmit() {
       <div class="container">
         <div class="menu-wrapper" :class="{ 'menu-open': mobileOpen }">
           <div class="m-logo">
-            <RouterLink :to="ROUTE_HOME">
-              <img :src="img('/images/logo.png')" width="360" alt="上海赛铌斯实业有限公司" title="上海赛铌斯实业有限公司" />
+            <RouterLink :to="ROUTE_HOME" class="logo-brand">
+              <img
+                class="logo-brand__icon"
+                :src="img('/images/logomain.png')"
+                alt=""
+              />
+              <div class="logo-brand__text">
+                <span class="logo-brand__name-cn">上海赛铌斯实业有限公司</span>
+                <span class="logo-brand__name-en">Shanghai Synergy Industrial Co., Ltd</span>
+              </div>
             </RouterLink>
           </div>
 
@@ -251,6 +259,58 @@ function onSearchSubmit() {
 </template>
 
 <style scoped>
+.logo-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #222;
+}
+.logo-brand:hover {
+  text-decoration: none;
+  color: #222;
+}
+.logo-brand__icon {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  height: 68px;
+}
+.logo-brand__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.logo-brand__name-cn {
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.logo-brand__name-en {
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+@media (max-width: 991px) {
+  .logo-brand {
+    gap: 8px;
+  }
+  .logo-brand__name-cn {
+    font-size: 15px;
+  }
+  .logo-brand__name-en {
+    font-size: 11px;
+  }
+}
+@media (max-width: 480px) {
+  .logo-brand__name-cn {
+    font-size: 13px;
+  }
+  .logo-brand__name-en {
+    font-size: 10px;
+  }
+}
+
 /* 与 nuoerbearing 原站一致：外链 + 圆形图标图（无额外色底），图标为 80×80 缩放到顶栏高度 */
 .header-social-link {
   display: inline-block;
