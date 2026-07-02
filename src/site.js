@@ -18,7 +18,7 @@ export function productDetailPath(slug) {
   return `${ROUTE_PRODUCTS}/item/${slug}`
 }
 
-export const CONTACT_EMAIL = 'easondu@synergybearings.com | vicky@synergybearings.com'
+export const CONTACT_EMAIL = 'easondu@synergybearings.com | vickysu@synergybearings.com'
 export const MAILTO = `mailto:${CONTACT_EMAIL}`
 export const TEL_MOBILE_DISPLAY = '+8618839713991'
 export const TEL_LANDLINE_DISPLAY = '+8617821086766'

@@ -43,13 +43,13 @@ function withLangIfNeeded(href) {
                 <h1 :style="{ color: slide.h1c }">{{ slide.h1 }}</h1>
                 <p v-if="slide.p" :style="{ color: slide.pc }">{{ slide.p }}</p>
                 <div v-if="slide.showBtn" class="btn-common btn-hero">
-                  <a
+                  <!-- <a
                     :href="withLangIfNeeded(slide.btnHref)"
                     :target="isExternalHref(slide.btnHref) ? '_blank' : undefined"
                     :rel="isExternalHref(slide.btnHref) ? 'noopener noreferrer' : undefined"
                   >
                     &nbsp;{{ t('common.learnMore') }}&nbsp; <i class="fas fa-angle-right"></i>
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>

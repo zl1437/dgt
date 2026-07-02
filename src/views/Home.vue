@@ -56,7 +56,6 @@ const displayServices = computed(() => {
             <div class="about-content-container">
               <div class="section-head-container">
                 <div class="section-head">
-                  <h5>// {{ t('home.about.companyH5') }}</h5>
                   <p>{{ t('home.about.introP') }}</p>
                   <p><br /></p>
                 </div>
